@@ -5,6 +5,7 @@ import Market from "../views/Market";
 import ResourceDetail from "../views/ResourceDetail";
 import ResourceBuy from "../views/ResourceBuy";
 import MerchantDetail from "../views/MerchantDetail";
+import Government from "../views/Government";
 
 Vue.use(VueRouter);
 
@@ -12,7 +13,7 @@ const router = new VueRouter({
   mode: "history",
   routes: [
     {
-      path: "/test",
+      path: "/",
       component: HelloWorld,
     },
     {
@@ -33,6 +34,10 @@ const router = new VueRouter({
       path: "/merchant/:merchantAddress",
       component: MerchantDetail,
       props: true,
+    },
+    {
+      path: "/government",
+      component: Government,
     },
   ],
 });

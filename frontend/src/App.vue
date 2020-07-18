@@ -8,8 +8,8 @@
       <v-btn text to="/market">
         Buy
       </v-btn>
-      <v-btn text>
-        Sell
+      <v-btn text to="/government">
+        Government
       </v-btn>
     </v-app-bar>
     <v-main>
