@@ -10,7 +10,15 @@
           <div class="text-h2 title">From Merchant {{ owner }}</div>
           <div class="text-h4">Rules: Maximum 10 per person</div>
           <div class="text-h4">Price: $$$</div>
-          <v-btn>BUY BUTTON</v-btn>
+          <v-card-actions>
+            <v-text-field
+              v-model="buyAmount"
+              type="number"
+              label="Number"
+              class="mr-3"
+            ></v-text-field>
+            <v-btn tile @click="buy">BUY</v-btn>
+          </v-card-actions>
         </v-col>
       </v-row>
       <v-card-title>
@@ -47,6 +55,7 @@ export default {
   },
   data() {
     return {
+      buyAmount: 0,
       transferNumber: 0,
       purchaseNumber: 0,
       owner: "",
@@ -75,8 +84,8 @@ export default {
     };
   },
   methods: {
-    buy(item) {
-      console.log(item);
+    buy() {
+      console.log(this.buyAmount);
     },
   },
 };
