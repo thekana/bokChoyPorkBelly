@@ -66,26 +66,33 @@ export default {
       search: "",
       headers: [
         { text: "Purchased By", align: "start", value: "buyerAddress" },
+        { text: "Name", value: "name" },
         { text: "Date", value: "date" },
         { text: "Amount", value: "amount" },
       ],
       items: [
         {
-          buyerAddress: "King Hash",
-          date: "12323",
-          amount: 1000,
+          buyerAddress: "0x294424CeDd4319BC0FAd4EaCA7401A50A0783608",
+          name: "Dhammasorn",
+          date: "19/07/2020 11:50:23",
+          amount: 10,
         },
         {
-          buyerAddress: "Gian Hash",
-          date: "3123123",
-          amount: 200,
+          buyerAddress: "0x08DFc6F4b8040b61A7383219516a1657D94bd1a1",
+          name: "Suebtrakul",
+          date: "19/07/2020 11:32:36",
+          amount: 5,
         },
       ],
     };
   },
   methods: {
     buy() {
-      console.log(this.buyAmount);
+      if (this.buyAmount >= 10) {
+        alert("Limit Exceeded");
+      } else {
+        alert("Ok");
+      }
     },
   },
 };

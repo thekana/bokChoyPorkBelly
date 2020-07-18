@@ -21,6 +21,7 @@
             item-key="time"
             :headers="innerHeaders"
             :loading="innerLoading"
+            :items="innerItems"
             loading-text="Loading... Please wait"
             dense
             hide-default-footer
@@ -52,12 +53,16 @@ export default {
       ],
       items: [
         {
-          resourceAddress: "8fije0923kqwe90134",
-          resourceType: "mask",
+          resourceAddress: "0x9b9251A5CCE10e91A0FA239e98a67873331Bf3B9",
+          resourceType: "MASK",
         },
         {
-          resourceAddress: "09e-0932ejwe8384433",
-          resourceType: "hand sanitizer",
+          resourceAddress: "0xE89F9F7992c3D431301050d98605f5e883140bbd",
+          resourceType: "HAND SANITIZER",
+        },
+        {
+          resourceAddress: "0xE690cA8458064200bFE51407A422bFb631454C85",
+          resourceType: "MASK",
         },
       ],
       innerHeaders: [
@@ -76,14 +81,29 @@ export default {
         },
         {
           text: "Amount",
-          value: "Amount",
+          value: "amount",
         },
         {
           text: "Status",
           value: "status",
         },
       ],
-      innerItems: [],
+      innerItems: [
+        {
+          time: "1 July 2020",
+          from: "Shanghai Dasheng Health Products Manufacturing, China",
+          to: "Suvarnabhumi Airport Samut Prakan, Thailand",
+          amount: 1000,
+          status: "Dispatched",
+        },
+        {
+          time: "10 July 2020",
+          from: "Suvarnabhumi Airport Samut Prakan, Thailand",
+          to: "City Municipality of Nan, Thailand",
+          amount: 1000,
+          status: "Distributed",
+        },
+      ],
     };
   },
   methods: {
@@ -94,8 +114,9 @@ export default {
       if (value) {
         this.innerLoading = false;
         this.coords = [
-          [-167.6266, -17],
-          [-145.323, -18],
+          [121.2572993, 31],
+          [100.6122394, 13.685683],
+          [100.2861328, 18.8240931],
         ];
       }
     },

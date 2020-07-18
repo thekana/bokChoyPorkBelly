@@ -55,8 +55,40 @@ export default {
   created() {
     if (this.name.includes("hand")) {
       this.img = "hand-sanitizer.jpg";
+      this.items = [
+        {
+          merchantName: "Jirayu",
+          resourceAddress: "0x81d7A7e0dea30FD1961Ff58d4C7200CB3d502072",
+          type: "Individual",
+          avail: 45,
+          merchantAddress: "0xD2e409198B6F2738352CC07ADEdb84bBF8023203",
+        },
+      ];
     } else {
       this.img = "mask.jpg";
+      this.items = [
+        {
+          merchantName: "Government",
+          resourceAddress: "0xE690cA8458064200bFE51407A422bFb631454C85",
+          type: "Government",
+          avail: 200,
+          merchantAddress: "0xE3e69db964318DCcbD50d030d1d851565F41b639",
+        },
+        {
+          merchantName: "Jirayu",
+          resourceAddress: "0x0A01d28F11ebf995A15710850e99EC2D6327Df67",
+          type: "Individual",
+          avail: 90,
+          merchantAddress: "0xD2e409198B6F2738352CC07ADEdb84bBF8023203",
+        },
+        {
+          merchantName: "Sirivorawong",
+          resourceAddress: "0xD275b686afEB04c5A8c0457eec6e4311974770e1",
+          type: "Individual",
+          avail: 50,
+          merchantAddress: "0x7BC33cb2C57F1fE3d3dA6C120643e48c5618B6c1",
+        },
+      ];
     }
   },
   data() {
@@ -70,29 +102,7 @@ export default {
         { text: "Availability", value: "avail" },
         { text: "Action", value: "actions", sortable: false },
       ],
-      items: [
-        {
-          merchantName: "Mr Kay",
-          resourceAddress: "3482jda1231djalkd123",
-          type: "Government",
-          avail: 1000,
-          merchantAddress: "94834959043",
-        },
-        {
-          merchantName: "Mr NPM",
-          resourceAddress: "6654jda1231djalkd123",
-          type: "Government",
-          avail: 90,
-          merchantAddress: "94834959043",
-        },
-        {
-          merchantName: "Mr DOG",
-          resourceAddress: "2482jda1231djalkd123",
-          type: "Government",
-          avail: 200,
-          merchantAddress: "94834959043",
-        },
-      ],
+      items: [],
     };
   },
   methods: {},

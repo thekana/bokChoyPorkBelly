@@ -65,9 +65,19 @@ export default {
       ],
       items: [
         {
-          resourceAddress: "3482jda1231djalkd123",
-          type: "Government",
-          avail: 1000,
+          resourceAddress: "0x21Dbc27A6715afeC623AAC4Bb095E05F74C59172",
+          type: "Mask",
+          avail: 50,
+        },
+        {
+          resourceAddress: "0x286FE32E70CF765b82f641263a9F82942fbFA990",
+          type: "Mask",
+          avail: 50,
+        },
+        {
+          resourceAddress: "0xb7AC8C2bc53Bf2179474b60ba2E2cf78b4184A55",
+          type: "Hand Sanitizer",
+          avail: 50,
         },
       ],
     };

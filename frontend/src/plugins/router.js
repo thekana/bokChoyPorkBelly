@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HelloWorld from "../components/HelloWorld";
+import Home from "../views/Home";
 import Market from "../views/Market";
 import ResourceDetail from "../views/ResourceDetail";
 import ResourceBuy from "../views/ResourceBuy";
@@ -14,7 +14,7 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      component: HelloWorld,
+      component: Home,
     },
     {
       path: "/market",
