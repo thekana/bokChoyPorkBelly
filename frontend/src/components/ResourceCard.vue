@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="400">
+  <v-card class="mx-auto" max-width="400" @click="handle">
     <v-img
       class="white--text align-end"
       height="200px"
@@ -9,16 +9,6 @@
     <v-card-text class="text--primary">
       <div>{{ title }}</div>
     </v-card-text>
-
-    <v-card-actions>
-      <v-btn color="orange" text>
-        DUMMY
-      </v-btn>
-
-      <v-btn color="orange" text>
-        DUMMY
-      </v-btn>
-    </v-card-actions>
   </v-card>
 </template>
 
@@ -33,7 +23,11 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    handle() {
+      this.$router.push({ path: `/market/${this.title}` });
+    },
+  },
 };
 </script>
 
