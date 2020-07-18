@@ -25,6 +25,14 @@
         :items="items"
         :search="search"
       >
+        <template v-slot:item.name="{ item }">
+          <router-link :to="'/'">{{ item.merchantName }}</router-link>
+        </template>
+        <template v-slot:item.actions="{ item }">
+          <v-btn small tile outlined color="success" @click="buy(item)">
+            <v-icon left>mdi-cart</v-icon> Buy
+          </v-btn>
+        </template>
       </v-data-table>
     </v-card>
   </div>
@@ -52,16 +60,34 @@ export default {
         { text: "Address", value: "hash", sortable: false },
         { text: "Type", value: "type" },
         { text: "Availability", value: "avail" },
+        { text: "Action", value: "actions", sortable: false },
       ],
       items: [
         {
-          name: "Mr Kay",
+          merchantName: "Mr Kay",
           hash: "3482jda1231djalkd123",
           type: "Government",
           avail: 1000,
         },
+        {
+          merchantName: "Mr NPM",
+          hash: "6654jda1231djalkd123",
+          type: "Government",
+          avail: 90,
+        },
+        {
+          merchantName: "Mr DOG",
+          hash: "2482jda1231djalkd123",
+          type: "Government",
+          avail: 200,
+        },
       ],
     };
+  },
+  methods: {
+    buy(item) {
+      console.log(item);
+    },
   },
 };
 </script>
