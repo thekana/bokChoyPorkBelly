@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-card class="mx-auto" width="1000">
     <v-data-table
       :headers="headers"
       :items="items"
@@ -30,7 +30,7 @@
         </td>
       </template>
     </v-data-table>
-  </div>
+  </v-card>
 </template>
 
 <script>

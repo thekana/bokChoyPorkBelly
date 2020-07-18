@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="mx-5">
+    <v-card class="mx-auto" width="1000">
       <v-row>
         <v-col cols="6">
           <v-img :src="require(`../assets/${img}`)" />
@@ -11,7 +11,10 @@
         </v-col>
       </v-row>
       <v-card-title>
+        <span class="ml-5">Listing</span>
+        <v-spacer />
         <v-text-field
+          class="mb-3"
           v-model="search"
           append-icon="mdi-magnify"
           label="Search"
@@ -36,7 +39,10 @@
             tile
             outlined
             color="success"
-            :to="{ path: `/buy/${item.resourceAddress}` }"
+            :to="{
+              path: `/buy/${item.resourceAddress}`,
+              query: { type: `${type}` },
+            }"
           >
             <v-icon left>mdi-cart</v-icon> Buy
           </v-btn>
@@ -55,6 +61,7 @@ export default {
   created() {
     if (this.name.includes("hand")) {
       this.img = "hand-sanitizer.jpg";
+      this.type = "hand";
       this.items = [
         {
           merchantName: "Jirayu",
@@ -66,6 +73,7 @@ export default {
       ];
     } else {
       this.img = "mask.jpg";
+      this.type = "mask";
       this.items = [
         {
           merchantName: "Government",
@@ -95,6 +103,7 @@ export default {
     return {
       img: "",
       search: "",
+      type: "",
       headers: [
         { text: "Merchant Name", align: "start", value: "merchantName" },
         { text: "Resource Address", value: "resourceAddress", sortable: false },
@@ -112,5 +121,6 @@ export default {
 <style scoped>
 .title {
   text-transform: capitalize;
+  font-weight: bold;
 }
 </style>

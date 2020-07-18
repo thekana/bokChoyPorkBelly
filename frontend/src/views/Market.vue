@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row>
-      <v-col xs="12" md="6" v-for="(resource, i) in resources" :key="i">
+      <v-col cols="12" v-for="(resource, i) in resources" :key="i">
         <ResourceCard v-bind="resource" :key="i" />
       </v-col>
     </v-row>

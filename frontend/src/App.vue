@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="#333399" dark>
       <v-btn text to="/">
         <v-toolbar-title>Boy Chok</v-toolbar-title>
       </v-btn>

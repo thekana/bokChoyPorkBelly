@@ -1,12 +1,12 @@
 <template>
-  <v-card class="mx-auto" max-width="400" @click="handle">
+  <v-card class="mx-auto" max-width="800" @click="handle">
     <v-img
       class="white--text align-end"
-      height="200px"
+      height="250px"
       :src="require(`../assets/${img}`)"
     >
     </v-img>
-    <v-card-text class="text--primary">
+    <v-card-text class="title my-title">
       <div>{{ title }}</div>
     </v-card-text>
   </v-card>
@@ -31,4 +31,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.my-title {
+  text-transform: capitalize;
+}
+</style>
