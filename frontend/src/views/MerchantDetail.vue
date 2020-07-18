@@ -6,7 +6,9 @@
           <v-img :src="require(`../assets/${img}`)" />
         </v-col>
         <v-col cols="6">
-          <div class="text-h2 title">{{ name }}</div>
+          <div class="text-h2 title">
+            Merchant Address: {{ merchantAddress }}
+          </div>
           <div class="text-h4">Rules: Maximum 10 per person</div>
         </v-col>
       </v-row>
@@ -25,11 +27,6 @@
         :items="items"
         :search="search"
       >
-        <template v-slot:item.merchantName="{ item }">
-          <router-link :to="{ path: `/merchant/${item.merchantAddress}` }">{{
-            item.merchantName
-          }}</router-link>
-        </template>
         <template v-slot:item.actions="{ item }">
           <v-btn
             small
@@ -48,49 +45,29 @@
 
 <script>
 export default {
-  name: "ResourceDetail",
+  name: "MerchantDetail",
   props: {
-    name: String,
+    merchantAddress: String,
   },
   created() {
-    if (this.name.includes("hand")) {
-      this.img = "hand-sanitizer.jpg";
-    } else {
-      this.img = "mask.jpg";
-    }
+    this.img = "hand-sanitizer.jpg";
+    this.img = "mask.jpg";
   },
   data() {
     return {
       img: "",
       search: "",
       headers: [
-        { text: "Merchant Name", align: "start", value: "merchantName" },
-        { text: "Resource Address", value: "resourceAddress", sortable: false },
+        { text: "Resource Address", value: "resourceAddress" },
         { text: "Type", value: "type" },
         { text: "Availability", value: "avail" },
         { text: "Action", value: "actions", sortable: false },
       ],
       items: [
         {
-          merchantName: "Mr Kay",
           resourceAddress: "3482jda1231djalkd123",
           type: "Government",
           avail: 1000,
-          merchantAddress: "94834959043",
-        },
-        {
-          merchantName: "Mr NPM",
-          resourceAddress: "6654jda1231djalkd123",
-          type: "Government",
-          avail: 90,
-          merchantAddress: "94834959043",
-        },
-        {
-          merchantName: "Mr DOG",
-          resourceAddress: "2482jda1231djalkd123",
-          type: "Government",
-          avail: 200,
-          merchantAddress: "94834959043",
         },
       ],
     };

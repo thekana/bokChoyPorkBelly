@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import HelloWorld from "../components/HelloWorld";
 import Market from "../views/Market";
 import ResourceDetail from "../views/ResourceDetail";
+import ResourceBuy from "../views/ResourceBuy";
+import MerchantDetail from "../views/MerchantDetail";
 
 Vue.use(VueRouter);
 
@@ -20,6 +22,16 @@ const router = new VueRouter({
     {
       path: "/market/:name",
       component: ResourceDetail,
+      props: true,
+    },
+    {
+      path: "/buy/:resourceAddress",
+      component: ResourceBuy,
+      props: true,
+    },
+    {
+      path: "/merchant/:merchantAddress",
+      component: MerchantDetail,
       props: true,
     },
   ],
