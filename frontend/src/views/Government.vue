@@ -25,6 +25,7 @@
             dense
             hide-default-footer
           ></v-data-table>
+          <HistoryMap :coordinates="coords" />
         </td>
       </template>
     </v-data-table>
@@ -32,10 +33,13 @@
 </template>
 
 <script>
+import HistoryMap from "../components/HistoryMap";
 export default {
   name: "Government",
+  components: { HistoryMap },
   data() {
     return {
+      coords: [],
       innerLoading: true,
       headers: [
         {
@@ -89,6 +93,10 @@ export default {
       console.log(item, value);
       if (value) {
         this.innerLoading = false;
+        this.coords = [
+          [-167.6266, -17],
+          [-145.323, -18],
+        ];
       }
     },
   },
